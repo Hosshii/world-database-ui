@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Axios from './views/Axios.vue'
 import Login from './views/Login.vue'
 import City from './views/City.vue'
+import CountryList from './views/CountryList.vue'
 import axios from 'axios'
 
 Vue.use(Router)
@@ -38,6 +39,11 @@ const router = new Router({
       path: '/city/:cityName',
       name: 'City',
       component: City,
+    },
+    {
+      path: '/countries',
+      name: 'countrylist',
+      component: CountryList,
     },
     {
       path: '/about',
