@@ -1,13 +1,10 @@
 <template>
   <div>
-    <div v-for="(country, index) in activeCountries" :key="country.code">
+    <div v-for="country in activeCountries" :key="country.code">
       <div>
-        <button @click="setOpenIndex(index)">{{ country.name }}</button>
-        <span v-if="openIndex === index">
-          <p>国名 : {{ country.name }}</p>
-          <p>人口 : {{ country.population }}人</p>
-          <p>地域 : {{ country.region }}</p>
-        </span>
+        <router-link :to="`/countries/${country.name}`">{{
+          country.name
+        }}</router-link>
       </div>
     </div>
   </div>
@@ -33,13 +30,7 @@ export default {
         this.isCountryInfo = true
       }
     }, */
-    setOpenIndex(index) {
-      if (this.openIndex === index) {
-        this.openIndex = 'null'
-      } else {
-        this.openIndex = index
-      }
-    },
+    moveDetailPage(index) {},
   },
   computed: {
     activeCountries: function() {
